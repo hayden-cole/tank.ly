@@ -2,7 +2,7 @@ package com.demo.tankly.di
 
 // TODO extract the URL
 //import com.demo.tankly.utils.BASE_URL
-import com.demo.tankly.ui.network.TankApiService
+import com.demo.tankly.network.TankApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
