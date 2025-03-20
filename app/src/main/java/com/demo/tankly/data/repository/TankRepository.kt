@@ -12,7 +12,7 @@ class TankRepository @Inject constructor(
         return apiService.getTanks()
     }
 
-    suspend fun getTankById(id: Int): Tank {
+    suspend fun getTankById(id: Int): Tank? {
         return apiService.getTankById(id)
     }
 }

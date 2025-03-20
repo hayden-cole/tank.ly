@@ -9,5 +9,5 @@ interface TankApiService {
     suspend fun getTanks(): List<Tank>
 
     @GET("api/tanks/{id}")
-    suspend fun getTankById(@Path("id") id: Int): Tank
+    suspend fun getTankById(@Path("id") id: Int): Tank?
 }
