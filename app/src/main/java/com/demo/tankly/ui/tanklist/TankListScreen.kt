@@ -65,7 +65,7 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                 items(tankList.value) { tank ->
                     TankItem(
                         tank = tank,
-                        onClick = { navController.navigate("details/${tank.id}") }
+                        onClick = { navController.navigate("tankDetails/${tank.id}") }
                     )
                 }
             }
