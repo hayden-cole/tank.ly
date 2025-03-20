@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TanklyTheme {
+            TanklyTheme(darkTheme = true, dynamicColor = false) {
                 MainScreen()
             }
         }
@@ -51,20 +51,20 @@ fun MainScreen() {
             enterTransition = {
                 fadeIn(
                     animationSpec = tween(
-                        300, easing = LinearEasing
+                        200, easing = LinearEasing
                     )
                 ) + slideIntoContainer(
-                    animationSpec = tween(300, easing = EaseIn),
+                    animationSpec = tween(200, easing = EaseIn),
                     towards = AnimatedContentTransitionScope.SlideDirection.Start
                 )
             },
             exitTransition = {
                 fadeOut(
                     animationSpec = tween(
-                        300, easing = LinearEasing
+                        200, easing = LinearEasing
                     )
                 ) + slideOutOfContainer(
-                    animationSpec = tween(300, easing = EaseOut),
+                    animationSpec = tween(200, easing = EaseOut),
                     towards = AnimatedContentTransitionScope.SlideDirection.End
                 )
             }
