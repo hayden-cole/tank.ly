@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -87,8 +88,8 @@ fun TankItem(
                     .fillMaxHeight(),
                 horizontalAlignment = Alignment.Start
             ) {
-                Text(text = tank.name, style = MaterialTheme.typography.headlineMedium)
-                Text(text = tank.country, style = MaterialTheme.typography.titleMedium)
+                Text(text = tank.name, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace)
+                Text(text = tank.country, style = MaterialTheme.typography.titleMedium, fontFamily = FontFamily.Monospace)
             }
 
             Spacer(modifier = Modifier

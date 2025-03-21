@@ -9,4 +9,6 @@ data class Tank(
     val country: String,
     @Json(name = "year_mfg")
     val yearManufactured: Int,
+    @Json(name = "image_url")
+    val imageUrl: String
 )
