@@ -57,7 +57,7 @@ val countryColors = mapOf(
 
 @Composable
 fun getCountryColor(country: String): Color {
-    return countryColors[country] ?: MaterialTheme.colorScheme.error // Default color if not found
+    return countryColors[country] ?: MaterialTheme.colorScheme.error
 }
 
 @Composable
@@ -109,16 +109,6 @@ fun TankItem(
     }
 }
 
-@Composable
-fun TanklyLogo(modifier: Modifier = Modifier) {
-    val painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo)
-    Image(
-        painter = painter,
-        contentDescription = "Tankly Logo",
-        modifier = modifier
-    )
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TankListScreen(navController: NavController, viewModel: TankListViewModel = viewModel()) {
@@ -155,7 +145,7 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                     Image(
                         painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo),
                         contentDescription = "Tank.ly Logo",
-                        modifier = Modifier.height(40.dp)  // Simple direct sizing
+                        modifier = Modifier.height(40.dp)
                     )
                 }
             }
@@ -167,7 +157,7 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                 isRefreshing = true
                 viewModel.refreshTanks()
 
-                Toast.makeText(context, "You have the latest data.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Tanks refreshed.", Toast.LENGTH_SHORT).show()
             },
             modifier = Modifier.padding(paddingValues)
         ) {
@@ -186,6 +176,5 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
         viewModel.tankList.observeForever {
             isRefreshing = false
         }
-//        viewModel.refreshTanks()
     }
 }
