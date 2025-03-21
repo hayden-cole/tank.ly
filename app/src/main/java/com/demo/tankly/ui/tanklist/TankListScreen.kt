@@ -2,6 +2,7 @@ package com.demo.tankly.ui.tanklist
 
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -36,6 +37,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -107,7 +109,15 @@ fun TankItem(
     }
 }
 
-
+@Composable
+fun TanklyLogo(modifier: Modifier = Modifier) {
+    val painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo)
+    Image(
+        painter = painter,
+        contentDescription = "Tankly Logo",
+        modifier = modifier
+    )
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -130,7 +140,8 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
+                        .padding(horizontal = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
                         text = "TANK.ly",
@@ -140,6 +151,11 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                             color = MaterialTheme.colorScheme.secondary
                         ),
                         modifier = Modifier.weight(1f)
+                    )
+                    Image(
+                        painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo),
+                        contentDescription = "Tank.ly Logo",
+                        modifier = Modifier.height(40.dp)  // Simple direct sizing
                     )
                 }
             }
