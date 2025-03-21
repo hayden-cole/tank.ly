@@ -5,6 +5,7 @@ This project demonstrates my competency in Android development. It incorporates 
 - Dagger / Hilt for dependency injection.
 - The Coil library for asynchronous image loading.
 - Pull-to-refresh and LazyColumn.
+- MVVM architecture.
 - Written in Kotlin and uses all relevant Kotlin-based build tools.
 
 ![A screenshot of the main view, showing a list of tanks and their countries of origin.](/readme-img/tankly_tanklist_screenshot.png)
