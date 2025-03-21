@@ -109,16 +109,6 @@ fun TankItem(
     }
 }
 
-@Composable
-fun TanklyLogo(modifier: Modifier = Modifier) {
-    val painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo)
-    Image(
-        painter = painter,
-        contentDescription = "Tankly Logo",
-        modifier = modifier
-    )
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TankListScreen(navController: NavController, viewModel: TankListViewModel = viewModel()) {
@@ -155,7 +145,7 @@ fun TankListScreen(navController: NavController, viewModel: TankListViewModel = 
                     Image(
                         painter = painterResource(id = com.demo.tankly.R.drawable.tankly_logo),
                         contentDescription = "Tank.ly Logo",
-                        modifier = Modifier.height(40.dp)  // Simple direct sizing
+                        modifier = Modifier.height(40.dp)
                     )
                 }
             }
