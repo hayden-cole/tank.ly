@@ -29,7 +29,6 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(moshi: Moshi): Retrofit {
         return Retrofit.Builder()
-            // The Android emulator's loopback address to the host machine.
             .baseUrl("http://10.0.2.2:5000")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
@@ -41,3 +40,4 @@ object NetworkModule {
         return retrofit.create(TankApiService::class.java)
     }
 }
+
